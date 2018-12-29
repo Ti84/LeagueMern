@@ -7,5 +7,3 @@
 ```javascript
 API_KEY="Your Generated API Key"
 ```
-3. npm install
-4. npm start or npm run watch
