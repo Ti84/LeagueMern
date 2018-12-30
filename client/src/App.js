@@ -5,12 +5,12 @@ import Summoner from './Summoner';
 
 class App extends Component {
 
-  handleError(response) {
-    if (!response.ok) {
-        throw Error(response.statusText);
-    }
-    return response;
-  }
+  // handleError(response) {
+  //   if (!response.ok) {
+  //       throw Error(response.statusText);
+  //   }
+  //   return response;
+  // }
 
   render() {
     return (
