@@ -1,8 +1,8 @@
 const express = require("express"); // call express
 const app = express(); // define our app using express
 
-const port = process.env.PORT || 8079;
-const routes = require("./backend-app/routes")
+const port = process.env.PORT || 5000;
+const routes = require("./routes")
 
 app.use("/api", routes);
 
