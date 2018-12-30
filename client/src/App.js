@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Link } from "@reach/router";
-import Search from './Search';
 import Summoner from './Summoner';
+import Home from './Home';
 
 class App extends Component {
 
@@ -16,10 +16,10 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-        <Link to="/">Search</Link>
+        <Link to="/">Home</Link>
         </header>
         <Router>
-          <Search path="/" />
+          <Home path="/" />
           <Summoner path="/summoner/:summonerName" />
         </Router>
       </div>

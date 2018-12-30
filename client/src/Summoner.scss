@@ -1,4 +1,31 @@
+.results {
+    display: flex;
+    flex-direction: row;
+
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+    }
+}
+
 .results__avatar {
     border-radius: 1000px;
-    width: 175px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.results__summoner-info{
+    flex: .2;
+}
+
+.results__summoner-card{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.results__matches {
+    width: 100%;
+    flex: .75;
 }
