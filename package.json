@@ -1,0 +1,21 @@
+{
+  "name": "league-app",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^3.5.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "cd server && npm run start",
+    "client": "cd client && npm run start",
+    "dev": "concurrently --kill-others-on-fail \"npm run watch\" \"npm run client\"",
+    "watch": "cd server && npm run watch",
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install",
+    "install-project": "npm install",
+    "install-all": "concurrently --kill-others-on-fail \"npm run install-client\" \"npm run install-server\" \" npm run install-project\""
+  },
+  "author": "",
+  "license": "ISC"
+}

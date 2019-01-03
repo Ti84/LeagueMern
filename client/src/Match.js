@@ -5,7 +5,8 @@ class Match extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      match: props.matchInfo
+      matchData: props.matchInfo,
+      championData: props.championInfo
     };
   }
 
@@ -13,14 +14,24 @@ class Match extends React.Component {
     return new Date(time).toLocaleDateString("en-US");
   };
 
+  grabChamp = champKey => {
+    const champ= Object.values(this.state.championData.data);
+    const champion = champ.find(champion => champion.key === champKey.toString());
+    if (champion) {
+      return champion.image.full;
+    }
+    return 'Ashe.png';
+  };
+
   render() {
     return (
       <div className="matchbox">
-        <ul>
-          <li>{this.state.match.champion}</li>
-          <li>{this.convertTime(this.state.match.timestamp)}</li>
-        </ul>
-        <a href="www.google.com">More Info</a>
+        <img
+          src={`http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${this.grabChamp(this.state.matchData.champion)}`}
+          alt="Champion Images"
+        />
+        <p>{this.convertTime(this.state.matchData.timestamp)}</p>
+        <a href="https://www.google.com">More Info</a>
       </div>
     );
   }
