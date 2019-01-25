@@ -1,4 +1,6 @@
-let router = require("express").Router();
+const express = require('express');
+const router = express.Router();
+
 require("dotenv").config();
 
 const request = require("request");
@@ -74,20 +76,5 @@ router.get("/v1/matchList/:region/:encryptedAccountId", (req, response) => {
   );
 });
 
-router.get("/v1/champions", (_req, response) => {
-  request(
-    "http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json",
-    (err, res, body) => {
-      if (err) {
-        if (err && res) {
-          return res.json(JSON.parse(err));
-        } else {
-          console.log(err);
-        }
-      }
-      response.json(JSON.parse(body));
-    }
-  );
-});
-// Export API routes
+
 module.exports = router;
