@@ -20,9 +20,8 @@ router.get("/v1/summoner/:region/:summonerName", (req, response) => {
     (err, res, body) => {
       if (err && res) {
         return res.json(JSON.parse(err));
-      } else {
-        console.log(err);
       }
+
       response.json(JSON.parse(body));
     }
   );
@@ -43,9 +42,8 @@ router.get("/v1/mastery/:region/:encryptedSummonerId", (req, response) => {
     (err, res, body) => {
       if (err && res) {
         return res.json(JSON.parse(err));
-      } else {
-        console.log(err);
       }
+
       response.json(JSON.parse(body));
     }
   );
@@ -67,8 +65,6 @@ router.get("/v1/matchList/:region/:encryptedAccountId", (req, response) => {
       if (err) {
         if (err && res) {
           return res.json(JSON.parse(err));
-        } else {
-          console.log(err);
         }
       }
       response.json(JSON.parse(body));
